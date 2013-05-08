@@ -1,0 +1,1 @@
+<div id="content"><h1>¡ERROR! No has iniciado sesión como Administrador.</h1></div>

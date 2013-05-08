@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>Buscador</title>
+<jsp:include page="elementos/head.jsp" />
+
+</head>
+<body>
+<jsp:include page="elementos/menu.jsp" />
+
+	<h2>Bienvenido al buscador de artículos</h2>
+	<p>Porfavor inserta el nombre de la marca del artículo.</p>
+	<form action="SearchServlet" method="get">
+		<table>
+			<tr>
+				<td>Buscar:</td>
+				<td><input type="text" id="buscarMarca" name="buscarMarca" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Submit" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

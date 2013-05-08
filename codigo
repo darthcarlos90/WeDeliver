@@ -1,0 +1,28 @@
+		int idCategoria = Integer.parseInt(request.getParameter("idDeCategoria"));
+		articuloDAO aDAO = new articuloDAO();
+		ArrayList<Subcategoria> subcategorias = new ArrayList<Subcategoria>();
+		
+		try
+		{
+			subcategorias = aDAO.obtenerSubCategorias(idCategoria);
+		}
+		catch (Exception ex)
+		{	
+			System.out.println(ex);
+		}
+		String categorias = "[";
+		for(int i = 0; i < subcategorias.size(); i++)
+		{
+			Subcategoria categoria = new Subcategoria();
+			categoria = subcategorias.get(i);
+			if ((i + 1) < subcategorias.size())
+			{
+				categorias += "{id: \"" + categoria.getId() + "\", nombre: \"" + categoria.getNombre() + "\"},";
+			}
+			else
+			{
+				categorias += "{id: \"" + categoria.getId() + "\", nombre: \"" + categoria.getNombre() + "\"}";
+			}
+		}
+		categorias += "]";
+		response.getWriter().write(categorias);
